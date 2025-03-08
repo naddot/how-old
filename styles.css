@@ -37,6 +37,14 @@ input, select {
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Style for Date Input */
+input[type="date"] {
+    width: 100%; /* Ensure date input takes full width */
+    max-width: 300px; /* Set max-width to limit its size */
+    font-size: 16px; /* Adjust font size */
+}
+
+/* Focus Effect */
 input:focus, select:focus {
     border-color: #28a745;
     box-shadow: 0 0 8px rgba(40, 167, 69, 0.4); /* Green border and glow effect when focused */
@@ -91,12 +99,17 @@ button:active {
         padding: 20px;
     }
 
-    button {
-        width: 100%; /* Make button full width on mobile */
-    }
-
     input, select {
         font-size: 14px; /* Slightly smaller font size for inputs */
+        width: 100%; /* Ensure all inputs take full width */
+    }
+
+    #birthday {
+        max-width: 100%; /* Ensure the date input is responsive */
+    }
+
+    button {
+        width: 100%; /* Make button full width on mobile */
     }
 
     #result, #nextMilestone {
