@@ -1,3 +1,10 @@
+// Event listener for the Calculate Age button
+document.getElementById("calculateBtn").addEventListener("click", calculateAge);
+
+// Event listener for the Go Back button
+document.getElementById("goBackBtn").addEventListener("click", goBack);
+
+// Function to calculate age and milestones
 function calculateAge() {
     // Get the date of birth input
     let birthdayInput = document.getElementById("birthday").value;
@@ -48,6 +55,7 @@ function calculateAge() {
     document.getElementById("result-container").style.display = "block";
 }
 
+// Reset function to go back to the form
 function goBack() {
     document.getElementById("form-container").style.display = "block";
     document.getElementById("result-container").style.display = "none";
