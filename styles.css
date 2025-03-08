@@ -18,7 +18,7 @@ body {
     border-radius: 15px; /* Make corners more rounded */
     width: 350px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease; /* Smooth transition effect */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition effect */
 }
 
 .container:hover {
@@ -47,8 +47,9 @@ button {
     padding: 12px 25px;
     background: #28a745;
     color: white;
+    margin-top: 20px; /* Adjust the number to control the spacing */
     border: none;
-    border-radius: 8px;
+    border-radius: 80px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -74,10 +75,25 @@ button:active {
 /* Milestone Message Styling */
 #nextMilestone {
     font-size: 18px;
-    margin-top: 20px;
-    color: #007bff;
-    font-weight: normal;
-    background-color: rgba(0, 123, 255, 0.1); /* Subtle background */
-    padding: 10px;
-    border-radius: 8px;
+    margin-top: 10px;
+    color: #007bff; /* Blue for milestone */
+}
+
+/* Age Information Styling */
+.age-info {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Result Container */
+#result-container {
+    display: none;
+    transition: opacity 1s ease;
+}
+
+#celebrateMessage {
+    font-size: 22px;
+    color: #ff5722;
+    font-weight: bold;
 }

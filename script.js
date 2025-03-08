@@ -2,10 +2,10 @@ function calculateAge() {
     // Get the date of birth input
     let birthdayInput = document.getElementById("birthday").value;
     
-    // Get the time inputs (hour, minute, second)
-    let hour = document.getElementById("hour").value || 0; // Default to 0 if empty
-    let minute = document.getElementById("minute").value || 0; // Default to 0 if empty
-    let second = document.getElementById("second").value || 0; // Default to 0 if empty
+    // Get the time inputs (hour, minute, second) from dropdowns
+    let hour = document.getElementById("hour").value || 0;
+    let minute = document.getElementById("minute").value || 0;
+    let second = document.getElementById("second").value || 0;
 
     // Check if a valid birthday is entered
     if (!birthdayInput) {
@@ -33,37 +33,22 @@ function calculateAge() {
 
     // Display the results
     document.getElementById("result").innerHTML = `
-        You are ${ageInYears} years, ${ageInMonths} months, ${ageInWeeks} weeks, ${ageInDays} days, 
-        ${ageInHours} hours, ${ageInMinutes} minutes, and ${ageInSeconds} seconds old.
+        <strong>You are ${ageInYears} years, ${ageInMonths} months, ${ageInWeeks} weeks, ${ageInDays} days, ${ageInHours} hours, ${ageInMinutes} minutes, and ${ageInSeconds} seconds old!</strong>
     `;
 
-    // Calculate next milestone (10,000 days, 1,000,000,000 seconds, etc.)
-    let nextMilestoneDate = getNextMilestoneDate(birthday, ageInDays, ageInSeconds);
-    let nextMilestoneMessage = getNextMilestoneMessage(nextMilestoneDate);
+    // Calculate and display the next milestone (50th birthday example)
+    let nextMilestoneDate = new Date(birthday);
+    nextMilestoneDate.setFullYear(nextMilestoneDate.getFullYear() + 50);
+    document.getElementById("nextMilestone").innerHTML = `
+        Your 50th birthday will be on ${nextMilestoneDate.toLocaleDateString()}.
+    `;
 
-    // Display the next milestone
-    document.getElementById("nextMilestone").innerHTML = nextMilestoneMessage;
+    // Show the result and hide the form
+    document.getElementById("form-container").style.display = "none";
+    document.getElementById("result-container").style.display = "block";
 }
 
-function getNextMilestoneDate(birthday, ageInDays, ageInSeconds) {
-    // Milestones
-    let next10kDays = new Date(birthday.getTime() + 10000 * 24 * 60 * 60 * 1000);
-    let next1BillionSeconds = new Date(birthday.getTime() + 1000000000 * 1000);
-
-    // Find the next milestone (either 10,000 days or 1,000,000,000 seconds)
-    if (ageInDays < 10000) {
-        return next10kDays;
-    } else {
-        return next1BillionSeconds;
-    }
-}
-
-function getNextMilestoneMessage(milestoneDate) {
-    let day = milestoneDate.getDate().toString().padStart(2, '0');
-    let month = (milestoneDate.getMonth() + 1).toString().padStart(2, '0');
-    let year = milestoneDate.getFullYear();
-    let hour = milestoneDate.getHours().toString().padStart(2, '0');
-    let minute = milestoneDate.getMinutes().toString().padStart(2, '0');
-    
-    return `You turn ${milestoneDate < new Date() ? 'over' : 'exactly'} ${milestoneDate < new Date() ? '10,000 days' : '1 billion seconds'} old on ${day}/${month}/${year} at ${hour}:${minute}, let's celebrate!`;
+function goBack() {
+    document.getElementById("form-container").style.display = "block";
+    document.getElementById("result-container").style.display = "none";
 }
