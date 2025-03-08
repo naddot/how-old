@@ -104,8 +104,9 @@ button:active {
         width: 100%; /* Ensure all inputs take full width */
     }
 
+    /* Adjust max-width for date input on mobile */
     #birthday {
-        max-width: 100%; /* Ensure the date input is responsive */
+        max-width: 100%; /* Make sure it doesn't overflow */
     }
 
     button {
@@ -116,6 +117,7 @@ button:active {
         font-size: 18px; /* Make result and milestone text a bit smaller on mobile */
     }
 }
+
 
 /* Media Queries for Tablets */
 @media (max-width: 768px) {

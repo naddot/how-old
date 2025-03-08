@@ -1,8 +1,8 @@
-// Event listener for the Calculate Age button
-document.getElementById("calculateBtn").addEventListener("click", calculateAge);
-
-// Event listener for the Go Back button
-document.getElementById("goBackBtn").addEventListener("click", goBack);
+window.onload = function() {
+    // Ensure everything loads properly
+    document.getElementById("calculateBtn").addEventListener("click", calculateAge);
+    document.getElementById("goBackBtn").addEventListener("click", goBack);
+};
 
 // Function to calculate age and milestones
 function calculateAge() {
