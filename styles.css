@@ -18,7 +18,8 @@ body {
     border-radius: 15px; /* Make corners more rounded */
     width: 350px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition effect */
+    transition: transform 0.2s ease; /* Smooth transition effect */
+    margin: 20px;
 }
 
 .container:hover {
@@ -26,7 +27,7 @@ body {
 }
 
 /* Input Fields Styling */
-input {
+input, select {
     padding: 12px;
     margin: 10px 0;
     width: 100%; /* Make inputs full width */
@@ -36,7 +37,7 @@ input {
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus {
+input:focus, select:focus {
     border-color: #28a745;
     box-shadow: 0 0 8px rgba(40, 167, 69, 0.4); /* Green border and glow effect when focused */
     outline: none;
@@ -47,12 +48,12 @@ button {
     padding: 12px 25px;
     background: #28a745;
     color: white;
-    margin-top: 20px; /* Adjust the number to control the spacing */
     border: none;
-    border-radius: 80px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px; /* Move the button down */
 }
 
 button:hover {
@@ -75,25 +76,49 @@ button:active {
 /* Milestone Message Styling */
 #nextMilestone {
     font-size: 18px;
-    margin-top: 10px;
-    color: #007bff; /* Blue for milestone */
+    margin-top: 20px;
+    color: #007bff;
+    font-weight: normal;
+    background-color: rgba(0, 123, 255, 0.1); /* Subtle background */
+    padding: 10px;
+    border-radius: 8px;
 }
 
-/* Age Information Styling */
-.age-info {
-    font-size: 18px;
-    font-weight: bold;
-    color: #444;
+/* Media Queries for Mobile */
+@media (max-width: 600px) {
+    .container {
+        width: 90%; /* Make the container take up more space on small screens */
+        padding: 20px;
+    }
+
+    button {
+        width: 100%; /* Make button full width on mobile */
+    }
+
+    input, select {
+        font-size: 14px; /* Slightly smaller font size for inputs */
+    }
+
+    #result, #nextMilestone {
+        font-size: 18px; /* Make result and milestone text a bit smaller on mobile */
+    }
 }
 
-/* Result Container */
-#result-container {
-    display: none;
-    transition: opacity 1s ease;
-}
+/* Media Queries for Tablets */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Make the container a bit wider on tablets */
+    }
 
-#celebrateMessage {
-    font-size: 22px;
-    color: #ff5722;
-    font-weight: bold;
+    button {
+        width: 100%;
+    }
+
+    input, select {
+        font-size: 16px; /* Adjust input font size for tablets */
+    }
+
+    #result, #nextMilestone {
+        font-size: 18px;
+    }
 }
