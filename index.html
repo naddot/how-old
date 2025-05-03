@@ -10,11 +10,17 @@
   <div class="card" id="card">
     <!-- FORM VIEW -->
     <div id="form-view">
-      <h1>🎈 How Old Are You?</h1>
+      <h1>🎈 When were you born?</h1>
       <form id="dob-form">
+        <label for="dob">📅 Date of Birth</label>
         <input type="date" id="dob" required />
-        <select id="hour"></select>
-        <select id="minute"></select>
+      
+        <label for="hour">🕒 Hour (0–23)</label>
+        <select id="hour" required></select>
+      
+        <label for="minute">⏱ Minute (0–59)</label>
+        <select id="minute" required></select>
+      
         <button type="submit">🔍 Find Milestone</button>
       </form>
     </div>
